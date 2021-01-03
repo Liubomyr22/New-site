@@ -1,0 +1,27 @@
+.nav{
+    background-color: royalblue;
+    grid-area: n;
+    
+    }
+
+ .item  {
+     /* color:yellow; */
+     border: 3px solid rosybrown;
+     border-radius: 20%;
+     margin-top: 20px;
+     text-align: center;
+     font-size: 30px;
+     font-weight: 400;
+    
+     
+ }  
+ 
+.item a {
+    text-decoration: none;
+    color:rgb(9, 229, 245);
+}
+
+.item a.activeLink {
+    color:gold;
+}
+
