@@ -20,10 +20,10 @@ function App(props) {
             path="/profile"
             render={() => (
               <Profile
-                posts={props.state.messagesPage.posts}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
-                newPostText={props.state.messagesPage.newPostText}
+                // posts={props.state.messagesPage.posts}
+                dispatch={props.dispatch}
+                state={props.state}
+                // newPostText={props.state.messagesPage.newPostText}
               />
             )}
           />
@@ -31,8 +31,10 @@ function App(props) {
             path="/dialogs"
             render={() => (
               <Dialogs
-                dialogs={props.state.profilePage.dialogs}
-                messages={props.state.profilePage.messages}
+              store={props.store}
+              state={props.state}
+                // dialogs={props.state.profilePage.dialogs}
+                // messages={props.state.profilePage.messages}
               />
             )}
           />
