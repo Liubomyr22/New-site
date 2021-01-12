@@ -1,26 +1,25 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {updateNewPostActionCreator, addPostActionCreator} from "../../../Redux/State"
-
+// import MyPostsContainer from "./MyPostsContainer"
 
 
 const MyPosts = (props) => {
 
-  let postsData = props.state.messagesPage.posts.map((m) => (
+  let postsData = props.posts.map((m) => (
     <Post message={m.message} like={m.like} />
   ));
 
   let newPostElement = React.createRef();
 
   let addPostEl = () => {
-    props.dispatch(addPostActionCreator())
+    props.addPost()
+    // props.dispatch(addPostActionCreator())
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    let action = updateNewPostActionCreator(text)
-    props.dispatch(action)
+    props.updateNewPostText(text)
   };
 
   return (
@@ -30,7 +29,7 @@ const MyPosts = (props) => {
         <textarea
           onChange={onPostChange}
           ref={newPostElement}
-          value={props.state.messagesPage.newPostText}
+          value={props.newPostText}
         />
         <br></br>
         <button onClick={addPostEl}>Add post</button>

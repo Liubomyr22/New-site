@@ -8,6 +8,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 function App(props) {
   return (
@@ -20,27 +22,22 @@ function App(props) {
             path="/profile"
             render={() => (
               <Profile
-                // posts={props.state.messagesPage.posts}
-                dispatch={props.dispatch}
-                state={props.state}
-                // newPostText={props.state.messagesPage.newPostText}
+                store={props.store}
               />
             )}
           />
           <Route
             path="/dialogs"
             render={() => (
-              <Dialogs
+              <DialogsContainer
               store={props.store}
-              state={props.state}
-                // dialogs={props.state.profilePage.dialogs}
-                // messages={props.state.profilePage.messages}
               />
             )}
           />
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />
           <Route path="/settings" render={() => <Settings />} />
+          <Route path="/users" render={() => <UsersContainer/>}/>
         </div>
       </div>
     </BrowserRouter>
