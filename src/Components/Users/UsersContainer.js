@@ -1,28 +1,32 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { followAC, setUsersAC, unfollowAC } from '../../Redux/usersReducer'
-import Users from './Users'
-
+import React from "react";
+import { connect } from "react-redux";
+import {
+  follow,
+  setUsers,
+  unfollow,
+  startLoading,
+  finishLoading,
+  setCurrentPage,
+  setTotalCount,
+} from "../../Redux/usersReducer";
+import Users from "./Users";
 
 const mapStateToProps = (state) => {
   return {
-    users: state.usersPage.users
-  }
-}
+    users: state.usersPage.users,
+    loading: state.usersPage.loading,
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    currentPage: state.usersPage.currentPage,
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId))
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId))
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users))
-    }
-  }
-}
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Users)
+export default connect(mapStateToProps, {
+  follow,
+  setUsers,
+  unfollow,
+  startLoading,
+  finishLoading,
+  setCurrentPage,
+  setTotalCount,
+})(Users);
