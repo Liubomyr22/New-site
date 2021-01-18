@@ -1,6 +1,6 @@
 import React, { Children } from "react";
 import s from "./Users.module.css";
-import * as axios from "axios";
+import { getUsers } from "./api/api";
 
 const Users = ({
   setUsers,
@@ -16,37 +16,25 @@ const Users = ({
   setCurrentPage,
   setTotalUsersCount,
 }) => {
-  //    axios.get('https://jsonplaceholder.typicode.com/todos/4')
-  //    .then(response => response.json())
-  // fetch('https://jsonplaceholder.typicode.com/todos/4')
-  //   .then(response => response.json())
-
   React.useEffect(() => {
     startLoading();
-   
-      setTimeout(() => {
-        axios
-          .get(
-            `https://jsonplaceholder.typicode.com/todos?_page=${currentPage}&_limit=${pageSize}`
-          )
-          .then((response) => {
-            setUsers(response.data);
-            // setTotalUsersCount(response.data.totalCount);
-          })
-          .finally(finishLoading());
-      }, 1000);
-    
+    setTimeout(() => {
+      getUsers(currentPage, pageSize)
+        .then((data) => { 
+          setUsers(data);
+          // setTotalUsersCount(response.data.totalCount);
+        })
+        .finally(finishLoading());
+    }, 1000);
   }, []);
 
   let onPageChanged = (pageNumber) => {
     setCurrentPage(pageNumber);
-    axios
-      .get(
-        `https://jsonplaceholder.typicode.com/todos?_page=${pageNumber}&_limit=${pageSize}`
-      )
-      .then((response) => {
-        setUsers(response.data);
-      });
+    getUsers(pageNumber, pageSize).then((data) => {
+        // console.log("data" + data)
+      setUsers(data);
+      
+    });
   };
 
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -74,7 +62,7 @@ const Users = ({
       </div>
       {loading && "Loading..."}
       {users.map((u) => (
-        <div className={s.x}>
+        <div className={s.usersContainer}>
           <div key={u.id} className={s.usersElementsPositions}>
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCMKbMRVA2I3sWUZD83MWnKP7Nwh-a3WVLQ&usqp=CAU"

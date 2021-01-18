@@ -47,7 +47,7 @@ let initialState = {
     // },
   ],
   pageSize: 5,
-  totalUsersCount: 47,
+  totalUsersCount: 44,
   currentPage: 1,
 };
 
@@ -63,10 +63,11 @@ const usersReducer = (state = initialState, action) => {
           return u;
         }),
       };
-      case SET_TOTAL_COUNT: 
+    case SET_TOTAL_COUNT:
       return {
-          ...state, totalUsersCount: action.totalUsersCount
-      }
+        ...state,
+        totalUsersCount: action.totalUsersCount,
+      };
     case UNFOLLOW:
       return {
         ...state,
@@ -80,10 +81,9 @@ const usersReducer = (state = initialState, action) => {
     case SET_USERS:
       return {
         ...state,
-        users: action.users
+        users: action.users,
       };
     case START_LOADING:
-      console.log({ state }, 789789789);
       return {
         ...state,
         loading: true,
@@ -128,12 +128,11 @@ export const startLoading = () => {
   };
 };
 export const setCurrentPage = (currentPage) => {
-    return {
-      type: SET_CURRENT_PAGE,
-      currentPage
-    };
+  return {
+    type: SET_CURRENT_PAGE,
+    currentPage,
   };
-  
+};
 
 export const finishLoading = () => {
   return {
@@ -141,11 +140,10 @@ export const finishLoading = () => {
   };
 };
 export const setTotalCount = (totalUsersCount) => {
-    return {
-      type: SET_TOTAL_COUNT,
-      totalUsersCount
-    };
+  return {
+    type: SET_TOTAL_COUNT,
+    totalUsersCount,
   };
-  
+};
 
 export default usersReducer;

@@ -16,12 +16,16 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  
 }
 
 .paginations button {
     color:rgb(233, 108, 25);
     background-color: darkgreen;
-    /* outline: 9 px solid blue; */
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    
 }
 
 
@@ -42,7 +46,6 @@
 
 .usersElementsPositions {
     display: flex;
-    /* justify-content: space- ; */
     flex-direction: column;
     align-content: space-between;
     height: 100px;
@@ -51,14 +54,15 @@
     
 }
 
-.x {
+.usersContainer {
     display: flex;
     
 }
-.x button{
+.usersContainer button{
     display: flex;
     align-items: baseline;
    color:rgb(233, 108, 25);
    background-color: darkgreen;
    outline: none;
+   
 }
