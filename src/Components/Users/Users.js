@@ -7,34 +7,18 @@ const Users = ({
   users,
   unfollow,
   follow,
-  startLoading,
-  finishLoading,
   loading,
   totalUsersCount,
   pageSize,
   currentPage,
-  setCurrentPage,
-  setTotalUsersCount,
+  getUsersThunkCreator
 }) => {
   React.useEffect(() => {
-    startLoading();
-    setTimeout(() => {
-      getUsers(currentPage, pageSize)
-        .then((data) => { 
-          setUsers(data);
-          // setTotalUsersCount(response.data.totalCount);
-        })
-        .finally(finishLoading());
-    }, 1000);
+    getUsersThunkCreator(currentPage,pageSize)
   }, []);
 
   let onPageChanged = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    getUsers(pageNumber, pageSize).then((data) => {
-        // console.log("data" + data)
-      setUsers(data);
-      
-    });
+    getUsersThunkCreator(pageNumber,pageSize)
   };
 
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -46,7 +30,7 @@ const Users = ({
 
   return (
     <div>
-      <div className={s.paginations}>
+      <div className={s.pagination}>
         {pages.map((p) => {
           return (
             <button

@@ -8,6 +8,7 @@ import {
   finishLoading,
   setCurrentPage,
   setTotalCount,
+  getUsersThunkCreator
 } from "../../Redux/usersReducer";
 import Users from "./Users";
 
@@ -29,4 +30,5 @@ export default connect(mapStateToProps, {
   finishLoading,
   setCurrentPage,
   setTotalCount,
+  getUsersThunkCreator,
 })(Users);

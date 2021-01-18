@@ -1,3 +1,4 @@
+import { getUsers } from "../Components/Users/api/api";
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
@@ -145,5 +146,17 @@ export const setTotalCount = (totalUsersCount) => {
     totalUsersCount,
   };
 };
+
+export const getUsersThunkCreator = (currentPage,pageSize) => (dispatch) => {
+    dispatch(startLoading());
+    setTimeout(() => {
+      getUsers(currentPage, pageSize)
+        .then((data) => { 
+          dispatch(setUsers(data));
+          // setTotalUsersCount(response.data.totalCount);
+        })
+        .finally(dispatch(finishLoading()));
+    }, 1000);
+}
 
 export default usersReducer;

@@ -12,14 +12,14 @@
 }
 
 
-.paginations {
+.pagination {
   display: flex;
   justify-content: center;
   margin-top: 20px;
   
 }
 
-.paginations button {
+.pagination button {
     color:rgb(233, 108, 25);
     background-color: darkgreen;
     border-radius: 50%;
