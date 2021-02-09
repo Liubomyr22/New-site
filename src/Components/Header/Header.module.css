@@ -1,10 +1,73 @@
 
 .header {
-    background: rgb(235, 119, 24);
-    grid-area: h;
-    }
+  background: whitesmoke;
+  grid-area: h;
+  border-radius: 30px;
+  height: 80px;
+  display: flex;
+ }
     
-    .header img {
-      width: 50px;
-      
-    }
+.header img {
+   width: 60px; 
+ }
+
+.logo {
+ max-width: 250px;
+ width: 100%;
+ height: 80px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  
+}    
+
+.headerForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.headerForm input {
+  height: 30px;
+  width: 250px;
+  border: 2px solid turquoise;
+  border-radius: 8px;
+  outline: none;
+  font-size:medium;
+}
+
+.headerForm button {
+  margin-left: 10px;
+  color:whitesmoke;
+  height: 35px;
+  width: 80px;
+  border-radius: 7px;
+  background-color: turquoise;
+  outline: none;
+
+
+}
+
+.headerAva {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 350px;
+  width: 100%;
+
+
+}
+
+.headerAva img {
+  max-width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  border: 2px solid turquoise;
+}
+
+.headerAva li {
+  color:turquoise;
+  margin-left: 20px;
+}
