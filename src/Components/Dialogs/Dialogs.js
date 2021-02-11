@@ -4,14 +4,13 @@ import s from "./Dialogs.module.css";
 import MessageItem from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
-
   let state = props.profilePage;
 
   let messagesData = state.messages.map((m) => (
     <MessageItem message={m.message} />
   ));
   let dialogsData = state.dialogs.map((m) => (
-    <DialogItem id={m.id} name={m.name} />
+    <DialogItem id={m.id} name={m.name} imgUrl={m.imgUrl} />
   ));
 
   let newMessageBody = state.newMessageBody;
@@ -27,9 +26,9 @@ const Dialogs = (props) => {
 
   return (
     <div className={s.dialogs}>
-      <div className={s.dialogItem}>{dialogsData}</div>
-      <div className={s.messages}>
-        {messagesData}
+      <div className={s.dialogItem}>
+      <span>{dialogsData}</span>
+        
         <div>
           <div>
             <textarea
@@ -43,6 +42,7 @@ const Dialogs = (props) => {
           </div>
         </div>
       </div>
+      <div className={s.messages}>{messagesData}</div>
     </div>
   );
 };

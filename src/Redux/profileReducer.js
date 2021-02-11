@@ -3,18 +3,17 @@ const SEND_MESSAGE = "SEND-MESSAGE";
 
 let initialState = {
     dialogs: [
-        { id: 1, name: "Ivan" },
-        { id: 2, name: "Petro" },
-        { id: 3, name: "Stepan" },
-        { id: 4, name: "Pavlo" },
-        { id: 5, name: "Vova" },
+        { id: 1, name: "Ivan", imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNLx7Ly59I6yE6FiVanuAPlJR4PQHTEQFIg&usqp=CAU" },
+        { id: 2, name: "Petro", imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2XnXNotX8jvaFRSghSKKU5eMa8JWT1NWUww&usqp=CAU" },
+        { id: 3, name: "Stepan", imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnw9HtiCBi2yxjHYAbRumrmLf4894fawLxbQ&usqp=CAU" },
+        { id: 4, name: "Vova", imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3HRow7SZK6mRDFp1H-Hriw9bgEyVgIObJfw&usqp=CAU" },
       ],
 
       messages: [
-        { id:1, message: "Hello" },
-        { id:2, message: "Bla bla bla" },
-        { id:3, message: "What's up" },
-        { id:4, message: "Zdorova" },
+        { id:1, message: "Please remember, do not take life too seriously. You will never get out of it alive." },
+        { id:2, message: "Please remember, do not take life too seriously. You will never get out of it alive." },
+        { id:3, message: "Please remember, do not take life too seriously. You will never get out of it alive." },
+        { id:4, message: "Please remember, do not take life too seriously. You will never get out of it alive." },
       ],
       newMessageBody: ""
 }

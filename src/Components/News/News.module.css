@@ -1,0 +1,35 @@
+.newsBlock {
+display: flex;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 20px;
+border-bottom: 3px solid turquoise;
+padding-bottom: 20px;
+
+}
+.newsBlock img {
+    max-width: 70px;
+    
+}
+
+.newsBlock span {
+    margin-left: 10px;
+    
+}
+
+.newsBlock button {
+    margin-left: 10px;
+    background-color: turquoise;
+    outline: none;
+    color:white;
+    max-width: 50px;
+    width: 100%;
+    height: 50px;
+
+    
+}
+
+.newsBlock a {
+    text-decoration: none;
+    color:white;
+}

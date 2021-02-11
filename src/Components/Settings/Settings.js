@@ -3,9 +3,11 @@ import s from './Settings.module.css';
 
 const Settings = () => {
     return (
-        <div>
-            Settings
+        <div className={s.demo}>
+        <div className={s.perspectiveContainer}>
+          <div  className={s.card}></div>
         </div>
+      </div>
     )
 }
 

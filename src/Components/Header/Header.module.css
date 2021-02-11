@@ -8,7 +8,8 @@
  }
     
 .header img {
-   width: 60px; 
+   max-width: 60px; 
+   width: 100%;
  }
 
 .logo {
@@ -18,6 +19,7 @@
  display: flex;
  justify-content: center;
  align-items: center;
+ flex-wrap: wrap;
   
 }    
 
@@ -32,6 +34,7 @@
 .headerForm input {
   height: 30px;
   width: 250px;
+  /* width: 100%; */
   border: 2px solid turquoise;
   border-radius: 8px;
   outline: none;
@@ -43,6 +46,7 @@
   color:whitesmoke;
   height: 35px;
   width: 80px;
+  /* width: 100%; */
   border-radius: 7px;
   background-color: turquoise;
   outline: none;
@@ -61,6 +65,7 @@
 }
 
 .headerAva img {
+  display: flex;
   max-width: 60px;
   height: 60px;
   border-radius: 30%;
@@ -70,4 +75,9 @@
 .headerAva li {
   color:turquoise;
   margin-left: 20px;
+}
+@media only screen and (max-width: 414px) {
+   .header li {
+    display: none;
+  }
 }

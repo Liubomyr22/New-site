@@ -3,12 +3,12 @@ const ADD_POST = "ADD-POST";
 
 let initialState = {
     posts: [
-        { message: "Hello programer", like: "42" },
-        { message: "Bla bla bla", like: "0" },
-        { message: "2 + 2 = 4", like: "4" },
-        { message: "What's up dude", like: "15" },
+        { message: "Can you imagine a new color that hasn’t been discovered before?", like: "42" },
+        { message: "What came first? The chicken or the egg?", like: "0" },
+        { message: "Red paper under a blue light appears black. Is the paper still red?", like: "4" },
+        { message: "Can vegetables feel pain?", like: "15" },
       ],
-      newPostText: "bla bla",
+      newPostText: "Add your post...",
 }
 
  const messagesPageReducer = (state = initialState,action) => {

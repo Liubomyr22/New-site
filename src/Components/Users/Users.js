@@ -11,14 +11,15 @@ const Users = ({
   totalUsersCount,
   pageSize,
   currentPage,
-  getUsersThunkCreator
+  getUsersThunkCreator,
+  portionSize = 10,
 }) => {
   React.useEffect(() => {
-    getUsersThunkCreator(currentPage,pageSize)
+    getUsersThunkCreator(currentPage, pageSize);
   }, []);
 
   let onPageChanged = (pageNumber) => {
-    getUsersThunkCreator(pageNumber,pageSize)
+    getUsersThunkCreator(pageNumber, pageSize);
   };
 
   let pagesCount = Math.ceil(totalUsersCount / pageSize);
@@ -27,22 +28,50 @@ const Users = ({
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i);
   }
-
+  //...xc
+  //  const[portionSize,setPortionSize] = React.useState(10);
+  let portionCount = Math.ceil(pagesCount / portionSize);
+  let [portionNumber, setPortionNumber] = React.useState(1);
+  let leftPortionPageNumber = (portionNumber - 1) * portionNumber + 1;
+  let rightPortionPageNumber = portionNumber + portionSize;
   return (
     <div>
       <div className={s.pagination}>
-        {pages.map((p) => {
-          return (
-            <button
-              className={currentPage === p && s.selectedPage}
-              onClick={() => {
-                onPageChanged(p);
-              }}
-            >
-              {p}
-            </button>
-          );
-        })}
+        {portionNumber > 1 && (
+          <button
+            onClick={() => {
+              setPortionNumber(portionNumber - 1);
+            }}
+          >
+            Prev
+          </button>
+        )}
+
+        {pages
+          .filter(
+            (p) => p >= leftPortionPageNumber && p <= rightPortionPageNumber
+          )
+          .map((p) => {
+            return (
+              <span
+                key={p}
+                onClick={(e) => {
+                  onPageChanged(p);
+                }}
+              >
+                <button>{p}</button>
+              </span>
+            );
+          })}
+        {portionCount > portionNumber && (
+          <button
+            onClick={() => {
+              setPortionNumber(portionNumber + 1);
+            }}
+          >
+            Next
+          </button>
+        )}
       </div>
       {loading && "Loading..."}
       {users.map((u) => (

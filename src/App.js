@@ -23,6 +23,7 @@ function App(props) {
             render={() => (
               <Profile
                 store={props.store}
+                
               />
             )}
           />

@@ -19,9 +19,9 @@ const Nav = () => {
       <div className={s.item}>
         <NavLink to="/news" activeClassName={s.activeLink}><button className={s.glowOnHover}>News</button></NavLink>
       </div>
-      <div className={s.item}>
+      {/* <div className={s.item}>
         <NavLink to="/music" activeClassName={s.activeLink}><button className={s.glowOnHover}>Music</button></NavLink>
-      </div>
+      </div> */}
       <div className={s.item}>
         <NavLink to="/settings" activeClassName={s.activeLink}><button className={s.glowOnHover}>Settings</button></NavLink>
       </div>

@@ -22,11 +22,11 @@
 
 .activeLink button{
     color:gold;
-   
 }
 
 .glowOnHover {
-    width: 220px;
+    max-width: 220px;
+    width: 90%;
     height: 40px;
     border: none;
     outline: none;

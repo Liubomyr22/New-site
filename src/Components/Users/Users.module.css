@@ -20,15 +20,23 @@
 }
 
 .pagination button {
-    color:rgb(233, 108, 25);
-    background-color: darkgreen;
+    color: darkgreen; 
+    background-color:rgb(233, 108, 25);
     border-radius: 50%;
     padding: 5px;
     display: flex;
+    margin: 5px;
+    outline: none;
     
 }
-
-
+.pagination button:focus {
+    color:rgb(233, 108, 25);
+    background-color: darkgreen;
+}
+.pagination button.selected {
+    color:rgb(233, 108, 25);
+    background-color: darkgreen;
+}
  
 .usersTitle {
     display: flex;
@@ -64,5 +72,10 @@
    color:rgb(233, 108, 25);
    background-color: darkgreen;
    outline: none;
+   margin-top: 5px;
+   margin-left: 5px;
+   padding: 5px;
+   border-radius: 10px;
    
 }
+

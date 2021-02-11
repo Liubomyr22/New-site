@@ -1,7 +1,81 @@
 .postsBlock {
     padding: 10px;
+    border: 4px solid turquoise;
+    margin: 4px;
+    
+}
+
+.postsBlock h2 {
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid turquoise;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 200px;
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: cyan;
+    color:white;
+}
+
+
+.postsBlock textarea {  
+    width: 75%;
+    height: 45px;
+    font-size: 17px;
+}
+
+.postsBlock button {
+    width: 20%;
+    margin-left: 15px;
+    height: 40px;
+    transform: translateY(-50%);
+    background-color: turquoise;
+    color: whitesmoke;
+    font-size: 17px;
+    cursor: pointer;
 }
 
 .posts {
     margin-top: 10px;
+}
+
+.jsonPlaceholderPosts {
+    
+    border:4px solid turquoise;
+    margin: 4px;
+    padding: 10px;
+}
+
+.jsonPlaceholderPosts h2{
+margin: 0 auto;
+text-align: center;
+border: 2px solid turquoise;
+border-radius: 15px;
+padding: 10px;
+max-width: 300px;
+width: 100%;
+margin-bottom: 15px;
+background-color: cyan;
+color:white;
+}
+
+.jsonPlaceholderPosts p {
+    margin-left: 20px;
+    border: 2px solid turquoise;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+.jsonPlaceholderPosts img {
+  max-width: 50px;
+  width: 100%;
+  border-radius: 30%;
+  margin-top: 10px;
+
+}
+
+.jsonPlaceholderPostsPosition {
+    display: flex;
 }

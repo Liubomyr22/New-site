@@ -10,6 +10,15 @@
   grid-template-columns: 3fr 8fr;
   grid-gap: 10px;
   margin-top: 15px;
+  
+}
+@media only screen and (max-width: 414px) {
+    .wrapper {Width:100%!important;}
+    body {
+      
+    }
+    /* .deviceWidth {width:280px!important; padding:0;}	 */
+    /* .center {text-align: center!important;} */
 }
 
 
