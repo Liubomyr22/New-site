@@ -1,6 +1,6 @@
-import React, { Children } from "react";
+import React from "react";
 import s from "./Users.module.css";
-import { getUsers } from "./api/api";
+
 
 const Users = ({
   setUsers,

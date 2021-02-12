@@ -4,7 +4,7 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import Header from "./Components/Header/Header";
 import Nav from "./Components/Nav/Nav";
 import Profile from "./Components/Profile/Profile";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -13,7 +13,7 @@ import UsersContainer from "./Components/Users/UsersContainer";
 
 function App(props) {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="wrapper">
         <Header />
         <Nav />
@@ -42,7 +42,7 @@ function App(props) {
           
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
